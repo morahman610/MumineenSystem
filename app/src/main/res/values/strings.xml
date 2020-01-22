@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mumineen</string>
+    <string name="league_name">League Name</string>
+    <string name="create_league">Create League</string>
+    <string name="title_activity_league">LeagueActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_player_btn_text">Add Player</string>
+    <string name="rankings_btn_txt">Rankings</string>
+    <string name="activities_btn_txt">Activities</string>
+    <string name="add_event_btn_txt">Add Event</string>
+    <string-array name="Weekdays">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+</resources>
