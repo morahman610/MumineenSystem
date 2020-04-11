@@ -12,6 +12,9 @@
     <string name="rankings_btn_txt">Rankings</string>
     <string name="activities_btn_txt">Activities</string>
     <string name="add_event_btn_txt">Add Event</string>
+    <string name="event_name_hint">Event Name</string>
+    <string name="event_points_hint">Event Points</string>
+    <string name="create_event_btn_txt">Create Event</string>
     <string-array name="Weekdays">
         <item>Sunday</item>
         <item>Monday</item>

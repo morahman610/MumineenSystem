@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".View.LeagueActivity">
+    tools:context=".View.Main.LeagueActivity">
 
     <Button style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/rankingBtn"

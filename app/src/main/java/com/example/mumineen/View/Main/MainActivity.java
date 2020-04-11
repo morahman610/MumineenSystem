@@ -1,4 +1,4 @@
-package com.example.mumineen.View;
+package com.example.mumineen.View.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 

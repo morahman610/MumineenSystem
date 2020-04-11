@@ -10,23 +10,23 @@
         android:id="@+id/nameEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="Name" />
+        android:hint="@string/event_name_hint"/>
     <EditText
         android:id="@+id/pointsEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:autofillHints="Points Available" />
+        android:hint="@string/event_points_hint"/>
     <Spinner
         android:id="@+id/eventDaySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="Days"/>
+        android:autofillHints="Event Days"/>
     <Button style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/createNewEventBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Event"/>
+        android:text="@string/create_event_btn_txt"/>
 
 
 </LinearLayout>

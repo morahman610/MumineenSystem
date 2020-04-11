@@ -1,4 +1,4 @@
-package com.example.mumineen.View;
+package com.example.mumineen.View.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,12 +25,9 @@ public class LeagueActivity extends AppCompatActivity {
 
     private void setupUI() {
         rankingButton = findViewById(R.id.rankingBtn);
-        rankingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), EventsActivity.class);
-                startActivity(intent);
-            }
+        rankingButton.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), EventsActivity.class);
+            startActivity(intent);
         });
     }
 

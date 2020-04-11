@@ -66,7 +66,7 @@ public class NewEventDialogFragment extends DialogFragment implements AdapterVie
                 eventsViewModel.insert(newEvent);
             }
 
-            getDialog().dismiss();
+          dismiss();
         });
         return view;
     }

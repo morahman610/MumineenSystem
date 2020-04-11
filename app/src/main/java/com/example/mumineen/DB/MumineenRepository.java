@@ -42,6 +42,11 @@ public class MumineenRepository {
         return allEvents;
     }
 
+    public Observable<List<Player>> getAllPlayers() {
+        return allplayers;
+    }
+
+
     public void addEvent(Event event) {
         Completable.fromAction(() -> eventDAO.insert(event)).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -54,6 +59,28 @@ public class MumineenRepository {
                     @Override
                     public void onComplete() {
                         Log.d(TAG, "onSubscribe: Event Insertion Successful");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: "+e.getMessage());
+                    }
+                });
+    }
+
+
+    public void addPlayer(Player player) {
+        Completable.fromAction(() -> playerDAO.insert(player)).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.d(TAG, "onSubscribe: Player Insertion Successful");
                     }
 
                     @Override
