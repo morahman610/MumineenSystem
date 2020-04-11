@@ -26,4 +26,6 @@ public class EventsViewModel extends AndroidViewModel {
     public void insert(Event event) { mumineenRepository.addEvent(event);}
 
     public Observable<List<Event>> getAllevents() {return mumineenRepository.getAllEvents();}
+
+    //this is a git test
 }
