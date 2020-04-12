@@ -70,7 +70,7 @@ public class DisplayEventsFragment extends Fragment {
     }
 
     private void getAllEvents() {
-        Disposable disposable =  eventsViewModel.getAllevents().subscribeOn(Schedulers.io())
+        Disposable disposable =  eventsViewModel.getAllEvents().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(modelClass -> {
                     Log.d(TAG, "++SUBSCRIBED++");

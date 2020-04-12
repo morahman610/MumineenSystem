@@ -15,6 +15,10 @@
     <string name="event_name_hint">Event Name</string>
     <string name="event_points_hint">Event Points</string>
     <string name="create_event_btn_txt">Create Event</string>
+    <string name="player_name_hint_txt">Player Name</string>
+    <string name="player_team_hint_txt">Player Team</string>
+    <string name="add_player_btn_txt">Add Player</string>
+    <string name="add_player_btn_txt">Add Player</string>
     <string-array name="Weekdays">
         <item>Sunday</item>
         <item>Monday</item>

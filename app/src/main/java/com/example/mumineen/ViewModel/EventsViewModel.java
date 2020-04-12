@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.mumineen.Model.Event;
 import com.example.mumineen.DB.MumineenRepository;
+import com.example.mumineen.Model.Player;
 
 import java.util.List;
 
@@ -23,9 +24,9 @@ public class EventsViewModel extends AndroidViewModel {
         mumineenRepository = new MumineenRepository(application);
     }
 
-    public void insert(Event event) { mumineenRepository.addEvent(event);}
+    public void insertEvent(Event event) { mumineenRepository.addEvent(event);}
+    public void insertPlayer(Player player) {mumineenRepository.addPlayer(player);}
 
-    public Observable<List<Event>> getAllevents() {return mumineenRepository.getAllEvents();}
-
-    //this is a git test
+    public Observable<List<Event>> getAllEvents() {return mumineenRepository.getAllEvents();}
+    public Observable<List<Player>> getAllPlayers() {return mumineenRepository.getAllPlayers();}
 }

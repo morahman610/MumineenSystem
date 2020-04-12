@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.mumineen.R;
 import com.example.mumineen.View.Events.EventsActivity;
-import com.example.mumineen.View.Ranking.RankingActivity;
+import com.example.mumineen.View.RankingActivity;
 
 public class LeagueActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class LeagueActivity extends AppCompatActivity {
     private void setupUI() {
         rankingButton = findViewById(R.id.rankingBtn);
         rankingButton.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), EventsActivity.class);
+            Intent intent = new Intent(v.getContext(), RankingActivity.class);
             startActivity(intent);
         });
     }

@@ -17,6 +17,10 @@ public class Player {
     @NonNull
     public String playerName;
 
+    @ColumnInfo(name = "Team")
+    @NonNull
+    public String playerTeam;
+
     @ColumnInfo(name = "Total Points")
     public int totalPoints;
 
