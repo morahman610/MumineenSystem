@@ -29,4 +29,6 @@ public class EventsViewModel extends AndroidViewModel {
 
     public Observable<List<Event>> getAllEvents() {return mumineenRepository.getAllEvents();}
     public Observable<List<Player>> getAllPlayers() {return mumineenRepository.getAllPlayers();}
+
+    public void updatePlayer(Player player) { mumineenRepository.updatePlayer(player);}
 }

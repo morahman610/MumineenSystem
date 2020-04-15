@@ -80,12 +80,33 @@ public class MumineenRepository {
 
                     @Override
                     public void onComplete() {
-                        Log.d(TAG, "onSubscribe: Player Insertion Successful");
+                        Log.d(TAG, "onComplete: Player Insertion Successful");
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         Log.d(TAG, "onError: "+e.getMessage());
+                    }
+                });
+    }
+
+    public void updatePlayer(Player player) {
+        Completable.fromAction(() -> playerDAO.update(player)).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.d(TAG, "onComplete: Player Update Successful");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "playerUpdateOnError: "+e.getMessage());
                     }
                 });
     }

@@ -63,7 +63,7 @@ public class NewEventDialogFragment extends DialogFragment implements AdapterVie
                 Event newEvent = new Event();
                 newEvent.eventName = nameInput;
                 newEvent.pointsAvailable = Integer.parseInt(pointsInput);
-                eventsViewModel.insert(newEvent);
+                eventsViewModel.insertEvent(newEvent);
             }
 
           dismiss();
