@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,7 @@ public class DisplayEventsFragment extends Fragment {
     //Views
     View view;
     private Button addEventDialogBtn;
+    private TextView dbtest;
 
     //CompositeDisposable
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -73,7 +75,7 @@ public class DisplayEventsFragment extends Fragment {
         Disposable disposable =  eventsViewModel.getAllEvents().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(modelClass -> {
-                    Log.d(TAG, "++SUBSCRIBED++");
+                    Log.d(TAG, "++SUBSCRIBED++ getAllEvents");
 
                     if(modelClass.size() > 0) {
                         initRecyclerView((ArrayList<Event>) modelClass);

@@ -31,7 +31,7 @@ public class EventPointsFragment extends Fragment {
 
     private static final String TAG = "EventPointsFragment";
 
-    private TextView eventPointsTitleText;
+    private TextView eventNameTxt;
     private RecyclerView eventPointsRecyclerView;
     private View view;
     private List<Player> allPlayers;
@@ -55,7 +55,7 @@ public class EventPointsFragment extends Fragment {
     }
 
     private void initUI(View view) {
-        eventPointsTitleText = view.findViewById(R.id.eventPointsTitleTxt);
+        eventNameTxt = view.findViewById(R.id.eventNameTxt);
         eventPointsRecyclerView = view.findViewById(R.id.eventsRecyclerView);
     }
 
@@ -77,7 +77,7 @@ public class EventPointsFragment extends Fragment {
     }
 
     public void initRecyclerView(ArrayList<Player> players) {
-        RecyclerView recyclerView = view.findViewById(R.id.eventPointsRecyclerView);
+        RecyclerView recyclerView = view.findViewById(R.id.eventPointsRecyclerVew);
         EventPointsRecyclerViewAdapter eventPointsRecyclerViewAdapter = new EventPointsRecyclerViewAdapter(getActivity(), players);
         recyclerView.setAdapter(eventPointsRecyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

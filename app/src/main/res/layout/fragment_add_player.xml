@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/playerNameEditTxt"
+        android:id="@+id/newPlayerNameEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/player_name_hint_txt"/>
     <EditText
-        android:id="@+id/playerTeamEditTxt"
+        android:id="@+id/newPlayerTeamEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/player_team_hint_txt"/>

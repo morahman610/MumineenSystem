@@ -19,4 +19,29 @@
         android:name="com.example.mumineen.View.Ranking.AddPlayerFragment"
         android:label="fragment_add_player"
         tools:layout="@layout/fragment_add_player" />
+    <dialog
+        android:id="@+id/newEventDialogFragment"
+        android:name="com.example.mumineen.View.Events.NewEventDialogFragment"
+        android:label="dialog_add_event"
+        tools:layout="@layout/dialog_add_event" />
+    <fragment
+        android:id="@+id/eventPointsFragment"
+        android:name="com.example.mumineen.View.Events.EventPointsFragment"
+        android:label="fragment_event_points"
+        tools:layout="@layout/fragment_event_points" />
+    <fragment
+        android:id="@+id/displayEventsFragment"
+        android:name="com.example.mumineen.View.Events.DisplayEventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
+    <activity
+        android:id="@+id/eventsActivity"
+        android:name="com.example.mumineen.View.Events.EventsActivity"
+        android:label="activity_events"
+        tools:layout="@layout/activity_events" />
+    <activity
+        android:id="@+id/leagueActivity"
+        android:name="com.example.mumineen.View.Main.LeagueActivity"
+        android:label="activity_league"
+        tools:layout="@layout/activity_league" />
 </navigation>

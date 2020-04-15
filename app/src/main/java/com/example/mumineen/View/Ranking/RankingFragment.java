@@ -10,14 +10,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.mumineen.Adapter.EventsStatePagerAdapter;
+import com.example.mumineen.Adapter.RankingsRecyclerViewAdapter;
 import com.example.mumineen.Model.Player;
 import com.example.mumineen.R;
 import com.example.mumineen.View.Events.DisplayEventsFragment;
@@ -40,6 +44,8 @@ import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ON
  * A simple {@link Fragment} subclass.
  */
 public class RankingFragment extends Fragment{
+
+    private static final String TAG = "RankingFragment";
 
     EventsViewModel eventsViewModel;
 
@@ -77,6 +83,8 @@ public class RankingFragment extends Fragment{
         Disposable disposable = eventsViewModel.getAllPlayers().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe( modelClass -> {
+
+                    Log.d(TAG, "onActivityCreated RankingFragment");
                     if (modelClass.size() > 0) {
                         initRecyclerView((ArrayList<Player>) modelClass);
                         }
@@ -89,6 +97,11 @@ public class RankingFragment extends Fragment{
     }
 
     private void initRecyclerView(ArrayList<Player> allPlayersArrayList) {
+
+        RecyclerView rankingRecyclerView = view.findViewById(R.id.rankingRecyclerView);
+        RankingsRecyclerViewAdapter adapter = new RankingsRecyclerViewAdapter(getActivity(), allPlayersArrayList);
+        rankingRecyclerView.setAdapter(adapter);
+        rankingRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     }
 }
