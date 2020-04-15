@@ -17,15 +17,15 @@ public class EventPointsFragment extends Fragment {
 
     private static final String TAG = "EventPointsFragment";
 
-    private TextView eventPointsTitleText;
+    private TextView eventNameTxt;
     private RecyclerView eventPointsRecyclerView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_points, container, false);
-        eventPointsTitleText = view.findViewById(R.id.eventPointsTitleTxt);
-        eventPointsRecyclerView = view.findViewById(R.id.eventsRecyclerView);
+        eventNameTxt = view.findViewById(R.id.eventNameTxt);
+        eventPointsRecyclerView = view.findViewById(R.id.eventPointsRecyclerVew);
 
         return view;
     }

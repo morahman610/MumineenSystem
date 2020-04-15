@@ -12,7 +12,7 @@ import com.example.mumineen.Model.Player;
 
 
 //CHANGE NEEDED: DATABASE IS BEING ACCESSED ON THE MAIN THREAD
-@Database(entities = {Player.class, Event.class}, version = 2, exportSchema = false)
+@Database(entities = {Player.class, Event.class}, version = 3, exportSchema = false)
 @TypeConverters({Converters.class})
 abstract class MumineenDatabase extends RoomDatabase {
 
