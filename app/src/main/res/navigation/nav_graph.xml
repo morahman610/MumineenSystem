@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/rankingFragment">
+    app:startDestination="@id/leagueMainFragment">
 
     <fragment
         android:id="@+id/rankingFragment"
@@ -14,34 +14,63 @@
             android:id="@+id/action_rankingFragment_to_addPlayerFragment"
             app:destination="@id/addPlayerFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/addPlayerFragment"
         android:name="com.example.mumineen.View.Ranking.AddPlayerFragment"
         android:label="fragment_add_player"
         tools:layout="@layout/fragment_add_player" />
+
     <dialog
         android:id="@+id/newEventDialogFragment"
         android:name="com.example.mumineen.View.Events.NewEventDialogFragment"
         android:label="dialog_add_event"
-        tools:layout="@layout/dialog_add_event" />
+        tools:layout="@layout/dialog_add_event" >
+        <action
+            android:id="@+id/action_newEventDialogFragment_to_displayEventsFragment2"
+            app:destination="@id/displayEventsFragment" />
+    </dialog>
+
     <fragment
         android:id="@+id/eventPointsFragment"
         android:name="com.example.mumineen.View.Events.EventPointsFragment"
         android:label="fragment_event_points"
-        tools:layout="@layout/fragment_event_points" />
+        tools:layout="@layout/fragment_event_points" >
+        <action
+            android:id="@+id/action_eventPointsFragment_to_displayEventsFragment"
+            app:destination="@id/displayEventsFragment" />
+        <argument android:name="eventName"
+            app:argType="string"
+            android:defaultValue="Event Name"/>
+        <argument android:name="eventPoints"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+
     <fragment
         android:id="@+id/displayEventsFragment"
         android:name="com.example.mumineen.View.Events.DisplayEventsFragment"
         android:label="fragment_events"
-        tools:layout="@layout/fragment_events" />
-    <activity
-        android:id="@+id/eventsActivity"
-        android:name="com.example.mumineen.View.Events.EventsActivity"
-        android:label="activity_events"
-        tools:layout="@layout/activity_events" />
-    <activity
-        android:id="@+id/leagueActivity"
-        android:name="com.example.mumineen.View.Main.LeagueActivity"
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_displayEventsFragment_to_newEventDialogFragment"
+            app:destination="@id/newEventDialogFragment" />
+        <action
+            android:id="@+id/toEventPointsFragment"
+            app:destination="@id/eventPointsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leagueMainFragment"
+        android:name="com.example.mumineen.View.Main.LeagueMainFragment"
         android:label="activity_league"
-        tools:layout="@layout/activity_league" />
+        tools:layout="@layout/fragment_league_main" >
+        <action
+            android:id="@+id/action_leagueMainFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
+        <action
+            android:id="@+id/action_leagueMainFragment_to_displayEventsFragment"
+            app:destination="@id/displayEventsFragment" />
+    </fragment>
+
 </navigation>

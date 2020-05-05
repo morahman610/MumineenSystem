@@ -35,9 +35,7 @@ class EventPointsRecyclerViewAdapter(val context: Context, val playerArrayList: 
 
 
     interface OnItemClickListener {
-        fun OnAddPointClick(position: Int) {
-
-        }
+        fun OnAddPointClick(test: Int)
     }
 
     inner class ViewHolder(itemView : View, listener : OnItemClickListener) : RecyclerView.ViewHolder(itemView) {

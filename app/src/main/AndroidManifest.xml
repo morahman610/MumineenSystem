@@ -10,13 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".View.RankingActivity"></activity>
-        <activity android:name=".View.Events.EventsActivity" />
-        <activity android:name=".View.Main.MainActivity" />
+        <activity android:name=".View.Main.LeagueMainFragment" />
         <activity
             android:name=".UI.ui.RosterActivity"
             android:label="@string/title_activity_league"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".View.Main.LeagueActivity">
+        <activity android:name=".View.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

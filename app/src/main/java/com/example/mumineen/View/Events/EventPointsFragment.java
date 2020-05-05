@@ -35,6 +35,8 @@ public class EventPointsFragment extends Fragment {
     private RecyclerView eventPointsRecyclerView;
     private View view;
     private List<Player> allPlayers;
+    private String eventName;
+    private int eventPoints;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -48,18 +50,23 @@ public class EventPointsFragment extends Fragment {
 
         initUI(view);
 
-        getAllEvents();
+        getAllPlayers();
 
 
         return view;
     }
 
     private void initUI(View view) {
+
+
         eventNameTxt = view.findViewById(R.id.eventNameTxt);
+        eventPoints = EventPointsFragmentArgs.fromBundle(getArguments()).getEventPoints();
+        String label = getArguments().getString("eventName") + eventPoints;
+        eventNameTxt.setText(label);
         eventPointsRecyclerView = view.findViewById(R.id.eventsRecyclerView);
     }
 
-    private void getAllEvents() {
+    private void getAllPlayers() {
 
         eventsViewModel = ViewModelProviders.of(this).get(EventsViewModel.class);
         Disposable disposable =  eventsViewModel.getAllPlayers().subscribeOn(Schedulers.io())
@@ -86,7 +93,13 @@ public class EventPointsFragment extends Fragment {
             @Override
             public void OnAddPointClick(int position) {
 
+
+
+                Player player = allPlayers.get(position);
+                player.totalPoints += eventPoints;
+              //  DisplayEventsFragmentDirections.ActionDisplayEventsFragmentToEventPointsFragment
                 eventsViewModel.updatePlayer(allPlayers.get(position));
+
             }
         });
 

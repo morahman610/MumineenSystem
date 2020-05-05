@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".View.Main.LeagueActivity">
+    tools:context=".View.Main.LeagueMainFragment">
 
     <Button style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/rankingBtn"
@@ -15,8 +15,8 @@
         android:text="@string/rankings_btn_txt"/>
 
     <Button style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/mainToEventsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activities_btn_txt"
-        android:onClick="activityIntentOnClick"/>
+        android:text="@string/main_to_events_button"/>
 </LinearLayout>
